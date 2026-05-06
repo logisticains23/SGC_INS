@@ -161,19 +161,19 @@
             display: flex;
             gap: 8px;
             flex-wrap: nowrap;
+            align-items: center;
         }
         
         .btn-editar {
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.875rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 0.85rem;
+            display: inline-block;
+            white-space: nowrap;
         }
         
         .btn-editar:hover {
@@ -184,13 +184,12 @@
             background-color: #dc3545;
             color: white;
             border: none;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.875rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 0.85rem;
+            display: inline-block;
+            white-space: nowrap;
         }
         
         .btn-eliminar:hover {
@@ -380,8 +379,8 @@
                 grid-column: span 1;
             }
             .action-buttons {
-                flex-direction: column;
-                gap: 5px;
+                flex-direction: row;
+                gap: 8px;
             }
         }
     </style>
@@ -691,7 +690,7 @@
                         <div class="table-responsive">
                             <table class="table table-bordered table-centros-costo" id="tablaCentros">
                                 <thead class="table-dark">
-                                    <tr><th>Código</th><th>Nombre / Dependencia</th><th>Centro</th><th width="150">Acciones</th></tr>
+                                    <tr><th>Código</th><th>Nombre / Dependencia</th><th>Centro</th><th width="180">Acciones</th></tr>
                                 </thead>
                                 <tbody id="tablaCentrosBody"></tbody>
                             </table>
@@ -763,12 +762,10 @@ function actualizarTablaCentros() {
                 <td>${centro.nombre}</td>
                 <td>${centro.centro}</td>
                 <td>
-                    <button class="btn-editar me-2" onclick="editarCentroCosto(${centro.id})">
-                        <i class="fas fa-edit"></i> Editar
-                    </button>
-                    <button class="btn-eliminar" onclick="eliminarCentroCosto(${centro.id})">
-                        <i class="fas fa-trash"></i> Eliminar
-                    </button>
+                    <div class="action-buttons">
+                        <button class="btn-editar" onclick="editarCentroCosto(${centro.id})">Editar</button>
+                        <button class="btn-eliminar" onclick="eliminarCentroCosto(${centro.id})">Eliminar</button>
+                    </div>
                 </td>
             `;
             tbody.appendChild(fila);

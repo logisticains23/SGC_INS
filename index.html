@@ -726,22 +726,19 @@ document.addEventListener('DOMContentLoaded', function() {
 function cargarDatosCentrosCosto() {
     const datosGuardados = localStorage.getItem('centrosCostoData');
     if (datosGuardados) {
-        centrosCostoData = JSON.parse(datosGuardados);
+        try {
+            const datos = JSON.parse(datosGuardados);
+            // Solo cargar si no está vacío
+            if (datos && Array.isArray(datos) && datos.length > 0) {
+                centrosCostoData = datos;
+            } else {
+                centrosCostoData = [];
+            }
+        } catch (e) {
+            centrosCostoData = [];
+        }
     } else {
-        // Datos por defecto
-        centrosCostoData = [
-            { id: 1, codigo: '01.01.01.01', nombre: 'ALTA DIRECCION', centro: 'AD' },
-            { id: 2, codigo: '01.01.01.02', nombre: 'UNIDAD DE PLANEAMIENTO', centro: 'UP' },
-            { id: 3, codigo: '01.01.02.01', nombre: 'UNIDAD DE RECURSOS HUMANOS', centro: 'URH' },
-            { id: 4, codigo: '01.02.01.01', nombre: 'OFICINA DE COOPERACION INTERNACIONAL', centro: 'OCI' },
-            { id: 5, codigo: '01.02.02.01', nombre: 'UNIDAD DE MODERNIZACION', centro: 'OPPM' },
-            { id: 6, codigo: '01.03.01.01', nombre: 'ADMINISTRACIÓN INTERNA', centro: 'AI' },
-            { id: 7, codigo: '01.03.01.02', nombre: 'UNIDAD DE CONTABILIDAD', centro: 'UC' },
-            { id: 8, codigo: '02.01.01.01', nombre: 'AREA DE LABORATORIOS', centro: 'LAB' },
-            { id: 9, codigo: '02.02.01.01', nombre: 'AREA DE INVESTIGACION', centro: 'INV' },
-            { id: 10, codigo: '02.03.01.01', nombre: 'AREA DE CAPACITACION', centro: 'CAP' }
-        ];
-        guardarDatosCentrosCosto();
+        centrosCostoData = [];
     }
     actualizarTablaCentros();
 }
@@ -754,23 +751,29 @@ function actualizarTablaCentros() {
     const tbody = document.getElementById('tablaCentrosBody');
     tbody.innerHTML = '';
     
-    centrosCostoData.forEach(centro => {
+    if (centrosCostoData.length === 0) {
         const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td>${centro.codigo}</td>
-            <td>${centro.nombre}</td>
-            <td>${centro.centro}</td>
-            <td>
-                <button class="btn-editar me-2" onclick="editarCentroCosto(${centro.id})">
-                    <i class="fas fa-edit"></i> Editar
-                </button>
-                <button class="btn-eliminar" onclick="eliminarCentroCosto(${centro.id})">
-                    <i class="fas fa-trash"></i> Eliminar
-                </button>
-            </td>
-        `;
+        fila.innerHTML = '<td colspan="4" class="text-center text-muted"><i class="fas fa-inbox me-2"></i>No hay registros. Importe un archivo Excel para cargar datos.</td>';
         tbody.appendChild(fila);
-    });
+    } else {
+        centrosCostoData.forEach(centro => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${centro.codigo}</td>
+                <td>${centro.nombre}</td>
+                <td>${centro.centro}</td>
+                <td>
+                    <button class="btn-editar me-2" onclick="editarCentroCosto(${centro.id})">
+                        <i class="fas fa-edit"></i> Editar
+                    </button>
+                    <button class="btn-eliminar" onclick="eliminarCentroCosto(${centro.id})">
+                        <i class="fas fa-trash"></i> Eliminar
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(fila);
+        });
+    }
     
     document.getElementById('totalRegistros').textContent = centrosCostoData.length;
 }
@@ -810,7 +813,6 @@ function editarCentroCosto(id) {
         document.getElementById('editCodigo').value = centro.codigo;
         document.getElementById('editNombre').value = centro.nombre;
         document.getElementById('editCentro').value = centro.centro;
-        // Aquí podrías actualizar los valores si lo deseas
     }
 }
 
@@ -852,27 +854,37 @@ function filtrarTablaCentros() {
 function reiniciarCentrosCosto() {
     Swal.fire({
         title: '¿Está seguro?',
-        text: 'Esta acción eliminará TODOS los centros de costo y no se puede deshacer',
+        text: 'Esta acción eliminará TODOS los centros de costo y la tabla quedará vacía. Podrá importar nuevos datos desde un archivo Excel.',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Sí, reiniciar',
+        confirmButtonText: 'Sí, reiniciar completamente',
         cancelButtonText: 'Cancelar',
         confirmButtonColor: '#dc3545'
     }).then((result) => {
         if (result.isConfirmed) {
-            // CORRECIÓN IMPORTANTE: Borrar completamente localStorage
+            // CORRECCIÓN DEFINITIVA: Borrar COMPLETAMENTE todos los datos
             localStorage.removeItem('centrosCostoData');
             centrosCostoData = [];
             
-            // Recargar los datos por defecto
-            cargarDatosCentrosCosto();
+            // Actualizar la tabla para mostrar mensaje vacío
+            actualizarTablaCentros();
             
-            Swal.fire('Reiniciado', 'Los datos han sido reiniciados a los valores por defecto', 'success');
+            Swal.fire({
+                title: 'Base de Datos Limpia',
+                text: 'Todos los centros de costo han sido eliminados. Ahora puede importar nuevos datos desde un archivo Excel.',
+                icon: 'success',
+                confirmButtonText: 'Entendido'
+            });
         }
     });
 }
 
 function exportarCentrosExcel() {
+    if (centrosCostoData.length === 0) {
+        Swal.fire('Advertencia', 'No hay datos para exportar', 'warning');
+        return;
+    }
+    
     const ws_data = [
         ['Código', 'Nombre / Dependencia', 'Centro'],
         ...centrosCostoData.map(c => [c.codigo, c.nombre, c.centro])
@@ -911,25 +923,31 @@ function importarCentrosExcel(input) {
                 }
                 guardarDatosCentrosCosto();
                 actualizarTablaCentros();
-                Swal.fire('Éxito', 'Datos importados correctamente', 'success');
+                Swal.fire('Éxito', `Se importaron ${centrosCostoData.length} registros correctamente`, 'success');
+            } else {
+                Swal.fire('Error', 'El archivo no contiene datos válidos', 'error');
             }
         } catch (error) {
-            Swal.fire('Error', 'Error al importar el archivo', 'error');
+            Swal.fire('Error', 'Error al importar el archivo: ' + error.message, 'error');
         }
     };
     reader.readAsArrayBuffer(file);
+    // Limpiar el input para permitir seleccionar el mismo archivo de nuevo
+    input.value = '';
 }
 
 function descargarPlantillaCentros() {
     const ws_data = [
         ['Código', 'Nombre / Dependencia', 'Centro'],
-        ['01.01.01.01', 'Ejemplo Centro 1', 'EC1']
+        ['01.01.01.01', 'Ejemplo Centro 1', 'EC1'],
+        ['01.01.01.02', 'Ejemplo Centro 2', 'EC2']
     ];
     
     const ws = XLSX.utils.aoa_to_sheet(ws_data);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Plantilla");
     XLSX.writeFile(wb, "plantilla_centros_costo.xlsx");
+    Swal.fire('Éxito', 'Plantilla descargada correctamente', 'success');
 }
 
 // ======================================

@@ -484,10 +484,10 @@
                     </button>
                 </div>
                 <div class="row mb-4">
-                    <div class="col-md-3"><div class="stats-card"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">Contrataciones Vigentes</h6><h2 class="text-white" id="statsVigentes">8</h2></div><i class="fas fa-check-circle"></i></div></div></div>
-                    <div class="col-md-3"><div class="stats-card" style="background: linear-gradient(135deg, #d4a017, #f0b429);"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">En Evaluación</h6><h2 class="text-white" id="statsEvaluacion">5</h2></div><i class="fas fa-chart-line"></i></div></div></div>
-                    <div class="col-md-3"><div class="stats-card" style="background: linear-gradient(135deg, #198754, #2fb872);"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">Culminados</h6><h2 class="text-white" id="statsCulminados">12</h2></div><i class="fas fa-flag-checkered"></i></div></div></div>
-                    <div class="col-md-3"><div class="stats-card" style="background: linear-gradient(135deg, #6c757d, #8f9bae);"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">Monto Total (S/.)</h6><h2 class="text-white" id="statsMontoTotal">S/ 1,245,600</h2></div><i class="fas fa-money-bill-wave"></i></div></div></div>
+                    <div class="col-md-3"><div class="stats-card"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">Contrataciones Vigentes</h6><h2 class="text-white" id="statVigentes">4</h2></div><i class="fas fa-file me-3"></i></div></div></div>
+                    <div class="col-md-3"><div class="stats-card" style="background: linear-gradient(135deg, #d4a017, #f0b429);"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">En Evaluación</h6><h2 class="text-white" id="statEvaluacion">2</h2></div><i class="fas fa-hourglass me-3"></i></div></div></div>
+                    <div class="col-md-3"><div class="stats-card" style="background: linear-gradient(135deg, #198754, #2fb872);"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">Culminadas</h6><h2 class="text-white" id="statCulminadas">8</h2></div><i class="fas fa-check-circle me-3"></i></div></div></div>
+                    <div class="col-md-3"><div class="stats-card" style="background: linear-gradient(135deg, #6c757d, #8f9bae);"><div class="d-flex justify-content-between"><div><h6 class="text-white-50">Total</h6><h2 class="text-white" id="statTotal">14</h2></div><i class="fas fa-chart-pie me-3"></i></div></div></div>
                 </div>
                 <div class="row">
                     <div class="col-md-6"><div class="card"><div class="card-header">Contrataciones por Estado</div><div class="card-body"><canvas id="estadosChart" height="250"></canvas></div></div></div>
@@ -518,9 +518,9 @@
                                     <tr><th>N°</th><th>Denominación</th><th>Centro de Costo</th><th>Fecha</th><th>Estado</th><th>Acciones</th></tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td>REQ-001</td><td>Adquisición de laptops</td><td>01.01.01.01 - ALTA DIRECCION</td><td>10/01/2025</td><td><span class="badge-status badge-vigente">Aprobado</span></td><td><button class="btn btn-sm btn-primary" onclick="verRequerimiento('REQ-001')">Ver</button></td></tr>
-                                    <tr><td>REQ-002</td><td>Servicio de limpieza</td><td>01.03.01.02 - UNIDAD DE PLANEAMIENTO</td><td>12/01/2025</td><td><span class="badge-status badge-evaluacion">Por evaluar</span></td><td><button class="btn btn-sm btn-warning" onclick="evaluarRequerimiento('REQ-002')">Evaluar</button></td></tr>
-                                    <tr><td>REQ-003</td><td>Consultoría legal</td><td>1.03 - ADMINISTRACIÓN INTERNA</td><td>14/01/2025</td><td><span class="badge-status" style="background:#f8d7da; color:#721c24;">Observado</span></td><td><button class="btn btn-sm btn-danger" onclick="subsanarRequerimiento('REQ-003')">Subsanar</button></td></tr>
+                                    <tr><td>REQ-001</td><td>Adquisición de laptops</td><td>01.01.01.01 - ALTA DIRECCION</td><td>10/01/2025</td><td><span class="badge-status badge-vigente">Aprobado</span></td><td><button class="btn btn-sm btn-primary">Ver</button></td></tr>
+                                    <tr><td>REQ-002</td><td>Servicio de limpieza</td><td>01.03.01.02 - UNIDAD DE PLANEAMIENTO</td><td>12/01/2025</td><td><span class="badge-status badge-evaluacion">Por Evaluar</span></td><td><button class="btn btn-sm btn-primary">Ver</button></td></tr>
+                                    <tr><td>REQ-003</td><td>Consultoría legal</td><td>1.03 - ADMINISTRACIÓN INTERNA</td><td>14/01/2025</td><td><span class="badge-status" style="background:#f8d7da; color:#721c24;">Rechazado</span></td><td><button class="btn btn-sm btn-primary">Ver</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -540,8 +540,8 @@
                     </div>
                 </div>
                 <div id="listaContrataciones">
-                    <div class="col-md-12 mb-3"><div class="card contratacion-card"><div class="card-body"><div class="row"><div class="col-md-8"><h5>CM-01-2025-INS</h5><p><strong>Bienes:</strong> Adquisición de equipos de laboratorio</p><small>Centro Costo: 01.01.01.02 - UNIDAD DE COMUNICACION</small></div><div class="col-md-4 text-end"><span class="badge-status badge-vigente">VIGENTE</span><br><button class="btn btn-sm btn-primary mt-2" onclick="verContratacion('CM-01-2025-INS')">Ver</button></div></div></div></div></div>
-                    <div class="col-md-12 mb-3"><div class="card contratacion-card"><div class="card-body"><div class="row"><div class="col-md-8"><h5>CM-02-2025-INS</h5><p><strong>Servicio:</strong> Mantenimiento de equipos médicos</p><small>Centro Costo: 1.02 - ORGANO DE CONTROL</small></div><div class="col-md-4 text-end"><span class="badge-status badge-evaluacion">EN EVALUACIÓN</span><br><button class="btn btn-sm btn-warning mt-2" onclick="evaluarContratacion('CM-02-2025-INS')">Evaluar</button></div></div></div></div></div>
+                    <div class="col-md-12 mb-3"><div class="card contratacion-card"><div class="card-body"><div class="row"><div class="col-md-8"><h5>CM-01-2025-INS</h5><p><strong>Bienes:</strong> Adquisición de 50 computadoras</p></div><div class="col-md-4 text-end"><span class="badge bg-success">Vigente</span> <br> <small>S/ 125,000.00</small></div></div></div></div></div>
+                    <div class="col-md-12 mb-3"><div class="card contratacion-card"><div class="card-body"><div class="row"><div class="col-md-8"><h5>CM-02-2025-INS</h5><p><strong>Servicio:</strong> Mantenimiento de infraestructura</p></div><div class="col-md-4 text-end"><span class="badge bg-warning">En Evaluación</span> <br> <small>S/ 45,000.00</small></div></div></div></div></div>
                 </div>
             </div>
             
@@ -594,11 +594,11 @@
                             <h5 class="mb-3 mt-4">2. Ítems y Código SIGAMEF</h5>
                             <div class="row mb-3">
                                 <div class="col-md-4"><label class="form-label required">Código SIGAMEF</label><input type="text" class="form-control" id="codigoSigamef" placeholder="Ej: 12345678"></div>
-                                <div class="col-md-8"><label class="form-label required">Descripción del ítem</label><input type="text" class="form-control" id="descripcionItem" placeholder="Descripción según catálogo SIGAMEF"></div>
+                                <div class="col-md-8"><label class="form-label required">Descripción del ítem</label><input type="text" class="form-control" id="descripcionItem" placeholder="Descripción del ítem"></div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-3"><label class="form-label required">Cantidad</label><input type="number" class="form-control" id="cantidad" value="1"></div>
-                                <div class="col-md-3"><label class="form-label required">Unidad de medida</label><select class="form-select" id="unidadMedida"><option>Unidad</option><option>Lote</option><option>Servicio</option></select></div>
+                                <div class="col-md-3"><label class="form-label required">Unidad de medida</label><select class="form-select" id="unidadMedida"><option>Unidad</option><option>Lote</option><option>Kilogramo</option></select></div>
                                 <div class="col-md-3"><label class="form-label required">Moneda</label><select class="form-select" id="moneda"><option>Soles (PEN)</option><option>Dólares (USD)</option></select></div>
                                 <div class="col-md-3"><label class="form-label">Valor referencial</label><input type="text" class="form-control" id="valorReferencial" placeholder="S/ 0.00"></div>
                             </div>
@@ -607,7 +607,7 @@
                             <div class="card bg-light mb-3"><div class="card-body">
                                 <div class="row">
                                     <div class="col-md-3"><label class="form-label">N° de entregable</label><input type="text" class="form-control" id="numEntregable" placeholder="01" value="01"></div>
-                                    <div class="col-md-4"><label class="form-label required">Plazo de entrega (días)</label><input type="number" class="form-control" id="plazoDias" placeholder="Ej: 15 días" oninput="calcularFecha()"></div>
+                                    <div class="col-md-4"><label class="form-label required">Plazo de entrega (días)</label><input type="number" class="form-control" id="plazoDias" placeholder="Ej: 15"></div>
                                     <div class="col-md-5"><label class="form-label">Fecha estimada de entrega</label><input type="date" class="form-control" id="fechaEstimada" readonly></div>
                                 </div>
                                 <div class="mt-2">
@@ -702,1745 +702,303 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- ======================================================== -->
-            <!-- CATÁLOGO SIGAMEF - Módulo completo -->
-            <!-- ======================================================== -->
-            <div id="catalogo-sigamef-section" style="display:none;">
-                <div class="titulo-con-boton">
-                    <h2><i class="fas fa-boxes me-2 text-primary"></i>Catálogo SIGAMEF</h2>
-                    <div class="nav-buttons">
-                        <button class="btn btn-outline-primary" onclick="mostrarDashboardBienes()">📊 Dashboard</button>
-                        <button class="btn btn-success" onclick="mostrarFormularioBien()">➕ Nuevo Registro</button>
-                        <button class="btn btn-info" onclick="mostrarListaBienes()">📋 Lista de Bienes</button>
-                    </div>
-                </div>
-                
-                <!-- Dashboard de Bienes -->
-                <div id="dashboardBienesView">
-                    <div class="dashboard-cards">
-                        <div class="dashboard-card">
-                            <h3 id="totalBienes">0</h3>
-                            <p>Total de Bienes</p>
-                        </div>
-                        <div class="dashboard-card">
-                            <h3 id="totalConFicha">0</h3>
-                            <p>Con Ficha Técnica</p>
-                        </div>
-                        <div class="dashboard-card">
-                            <h3 id="totalSinFicha">0</h3>
-                            <p>Sin Ficha Técnica</p>
-                        </div>
-                        <div class="dashboard-card">
-                            <h3 id="totalValor">S/ 0</h3>
-                            <p>Valor Total del Stock</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">Instrucciones del Sistema</div>
-                        <div class="card-body">
-                            <ul style="color: #555; line-height: 1.8;">
-                                <li>Registre los bienes con toda su información de clasificación</li>
-                                <li>Indique si el bien tiene ficha técnica asociada</li>
-                                <li>Si tiene ficha técnica, complete el ID de la ficha correspondiente</li>
-                                <li>Puede importar/exportar datos desde Excel</li>
-                                <li>El campo Precio_Uni_Ref es el precio unitario de referencia</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Formulario de Bien -->
-                <div id="formBienView" class="hidden card">
-                    <div class="card-header">
-                        <h3 class="card-title" id="formBienTitle">NUEVO REGISTRO DE BIEN</h3>
-                    </div>
-                    <div class="card-body">
-                        <form id="bienForm" onsubmit="return false;">
-                            <input type="hidden" id="bienId" value="">
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label>TIPO BIEN *</label>
-                                    <input type="text" id="tipoBien" class="form-control" required placeholder="Ej: Equipo, Material, Insumo">
-                                </div>
-                                <div class="form-group">
-                                    <label>COD. BIEN *</label>
-                                    <input type="text" id="codBien" class="form-control" required placeholder="Ej: B-001-2024">
-                                </div>
-                                <div class="form-group">
-                                    <label>U.M. (Unidad de Medida)</label>
-                                    <input type="text" id="um" class="form-control" placeholder="Ej: Unidad, Kilo, Litro">
-                                </div>
-                                <div class="form-group">
-                                    <label>PRECIO_UNI_REF (S/.)</label>
-                                    <input type="number" id="precioUniRef" step="0.01" class="form-control" placeholder="Ej: 1500.00">
-                                </div>
-                                <div class="form-group full-width">
-                                    <label>DESCRIPCIÓN *</label>
-                                    <textarea id="descripcionBien" rows="2" class="form-control" required placeholder="Descripción detallada del bien"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>ID GRUPO</label>
-                                    <input type="text" id="idGrupo" class="form-control" placeholder="Ej: GRP-01">
-                                </div>
-                                <div class="form-group">
-                                    <label>GRUPO</label>
-                                    <input type="text" id="grupo" class="form-control" placeholder="Ej: Equipos de Laboratorio">
-                                </div>
-                                <div class="form-group">
-                                    <label>ID CLASE</label>
-                                    <input type="text" id="idClase" class="form-control" placeholder="Ej: CLS-001">
-                                </div>
-                                <div class="form-group">
-                                    <label>CLASE</label>
-                                    <input type="text" id="clase" class="form-control" placeholder="Ej: Equipos de Medición">
-                                </div>
-                                <div class="form-group">
-                                    <label>ID FAMILIA</label>
-                                    <input type="text" id="idFamilia" class="form-control" placeholder="Ej: FAM-01">
-                                </div>
-                                <div class="form-group">
-                                    <label>FAMILIA</label>
-                                    <input type="text" id="familia" class="form-control" placeholder="Ej: Espectrofotómetros">
-                                </div>
-                                <div class="form-group">
-                                    <label>FICHA TÉCNICA</label>
-                                    <div class="radio-group">
-                                        <label><input type="radio" name="fichaTecnica" value="Si" onchange="toggleFichaId(true)"> Sí</label>
-                                        <label><input type="radio" name="fichaTecnica" value="No" onchange="toggleFichaId(false)" checked> No</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>ID. FICHA TÉCNICA</label>
-                                    <input type="text" id="idFichaTecnica" class="form-control" placeholder="Ej: 1, 2, 3..." disabled>
-                                </div>
-                            </div>
-                            <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                                <button type="submit" class="btn btn-primary" onclick="guardarBien()">GUARDAR REGISTRO</button>
-                                <button type="button" class="btn btn-secondary" onclick="cancelarFormBien()">CANCELAR</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <!-- Lista de Bienes -->
-                <div id="listaBienesView" class="hidden">
-                    <div class="card">
-                        <div class="card-header">
-                            LISTA DE BIENES REGISTRADOS
-                        </div>
-                        <div class="card-body">
-                            <div class="search-bar">
-                                <input type="text" id="searchBienInput" placeholder="Buscar por ID, código, descripción..." onkeyup="filtrarBienes()">
-                                <label class="btn btn-success" style="cursor: pointer;">
-                                    IMPORTAR EXCEL
-                                    <input type="file" id="excelInputBien" accept=".xlsx, .xls" style="display: none;" onchange="importarBienesExcel(this)">
-                                </label>
-                                <button class="btn btn-info" onclick="exportarBienesExcel()">EXPORTAR EXCEL</button>
-                                <button class="btn btn-danger" onclick="reiniciarBienes()">REINICIAR DATOS</button>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover table-bienes" id="bienesTable">
-                                    <thead class="table-dark">
-                                        <tr><th>ID</th><th>Tipo Bien</th><th>Cod. Bien</th><th>Descripción</th><th>U.M.</th><th>Precio (S/.)</th><th>Ficha Téc.</th><th>ID Ficha</th><th>Acciones</th></tr>
-                                    </thead>
-                                    <tbody id="bienesTableBody"></tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ======================================================== -->
-            <!-- FICHAS TÉCNICAS - Módulo completo -->
-            <!-- ======================================================== -->
-            <div id="fichas-tecnicas-section" style="display:none;">
-                <div class="titulo-con-boton">
-                    <h2><i class="fas fa-file-alt me-2 text-primary"></i>Fichas Técnicas</h2>
-                    <div class="nav-buttons">
-                        <button class="btn btn-outline-primary" onclick="mostrarDashboardFichas()">📊 Dashboard</button>
-                        <button class="btn btn-success" onclick="mostrarFormularioFicha()">➕ Nueva Ficha</button>
-                        <button class="btn btn-info" onclick="mostrarListaFichas()">📋 Lista de Fichas</button>
-                        <button class="btn btn-secondary" onclick="mostrarConfigFichas()">⚙️ Configuración</button>
-                    </div>
-                </div>
-                
-                <!-- Dashboard Fichas -->
-                <div id="dashboardFichasView">
-                    <div class="dashboard-cards">
-                        <div class="dashboard-card">
-                            <h3 id="totalFichas">0</h3>
-                            <p>Total de Fichas</p>
-                        </div>
-                        <div class="dashboard-card">
-                            <h3 id="nextIdDisplay">1</h3>
-                            <p>Próximo ID</p>
-                        </div>
-                        <div class="dashboard-card">
-                            <h3 id="deletedIdsCount">0</h3>
-                            <p>IDs Eliminados</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">Instrucciones del Sistema</div>
-                        <div class="card-body">
-                            <ul style="color: #555; line-height: 1.8;">
-                                <li>El ID es correlativo: 1, 2, 3, 4, ... (no se reutilizan IDs eliminados)</li>
-                                <li>Complete todos los campos según el formato de la ficha técnica</li>
-                                <li>En "Lista de Fichas" puede editar, eliminar o generar PDF</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Formulario Ficha -->
-                <div id="formFichaView" class="hidden card">
-                    <div class="card-header">
-                        <h3 class="card-title" id="formFichaTitle">FICHA TÉCNICA - NUEVO REGISTRO</h3>
-                    </div>
-                    <div class="card-body">
-                        <form id="fichaForm" onsubmit="return false;">
-                            <input type="hidden" id="fichaId" value="">
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label>CLASE DE ARTÍCULO</label>
-                                    <input type="text" id="claseArticulo" class="form-control" placeholder="Ej: Reactivo">
-                                </div>
-                                <div class="form-group">
-                                    <label>SUB CLASE DE ARTÍCULO</label>
-                                    <input type="text" id="subClaseArticulo" class="form-control" placeholder="Ej: ...">
-                                </div>
-                                <div class="form-group">
-                                    <label>ID (Correlativo)</label>
-                                    <input type="text" id="idFicha" readonly class="form-control id-display">
-                                </div>
-                                <div class="form-group">
-                                    <label>CÓDIGO MEF</label>
-                                    <input type="text" id="codigoMEF" class="form-control" required placeholder="Ej: B351000023415">
-                                </div>
-                                <div class="form-group full-width">
-                                    <label>NOMBRE</label>
-                                    <input type="text" id="nombreFicha" class="form-control" required placeholder="Ej: N,N,N,N-TETRAMETIL-ETILENDIAMINO (TEMED)">
-                                </div>
-                                <div class="form-group full-width">
-                                    <label>OTRA(S) DENOMINACIÓN(ES)</label>
-                                    <textarea id="otrasDenominaciones" rows="2" class="form-control" placeholder="Ej: 1,2-Bis(dimethylamino)etane, TEMED"></textarea>
-                                </div>
-                                <div class="form-group full-width">
-                                    <label>CARACTERÍSTICA</label>
-                                    <textarea id="aplicacion" rows="3" class="form-control" placeholder="Ej: catálisis de la formación de radicales libres"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>DOCUMENTOS</label>
-                                    <input type="text" id="documentos" class="form-control" placeholder="Ej: Inserto">
-                                </div>
-                                <div class="form-group">
-                                    <label>FORMA DE PRESENTACIÓN</label>
-                                    <input type="text" id="presentacion" class="form-control" placeholder="Ej: Frasco de 25 mL">
-                                </div>
-                                <div class="form-group">
-                                    <label>PESO MOLECULAR</label>
-                                    <input type="text" id="pesoMolecular" class="form-control" placeholder="Ej: 116.20">
-                                </div>
-                                <div class="form-group">
-                                    <label>PORCENTAJE PUREZA</label>
-                                    <input type="text" id="porcentajePureza" class="form-control" placeholder="Ej: 99%">
-                                </div>
-                                <div class="form-group">
-                                    <label>FÓRMULA</label>
-                                    <input type="text" id="formula" class="form-control" placeholder="Ej: (CH3)2NCH2CH2N(CH3)2">
-                                </div>
-                                <div class="form-group">
-                                    <label>DENSIDAD (g/cm³)</label>
-                                    <input type="text" id="densidad" class="form-control" placeholder="Ej: 0.77-0.01">
-                                </div>
-                                <div class="form-group">
-                                    <label>pH</label>
-                                    <input type="text" id="ph" class="form-control" placeholder="Ej: ...">
-                                </div>
-                                <div class="form-group">
-                                    <label>TEMPERATURA DE ALMACENAMIENTO</label>
-                                    <input type="text" id="temperaturaAlmacenamiento" class="form-control" placeholder="Ej: 2 a 8 °C">
-                                </div>
-                                <div class="form-group">
-                                    <label>VIGENCIA</label>
-                                    <input type="text" id="vigencia" class="form-control" placeholder="Ej: ...">
-                                </div>
-                                <div class="form-group full-width">
-                                    <label>OBSERVACIÓN</label>
-                                    <textarea id="observacion" rows="2" class="form-control" placeholder="Observaciones adicionales..."></textarea>
-                                </div>
-                            </div>
-                            <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                                <button type="submit" class="btn btn-primary" onclick="guardarFicha()">GUARDAR FICHA</button>
-                                <button type="button" class="btn btn-secondary" onclick="cancelarFormFicha()">CANCELAR</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <!-- Configuración Fichas -->
-                <div id="configFichasView" class="hidden card">
-                    <div class="card-header">CONFIGURACIÓN DEL SISTEMA</div>
-                    <div class="card-body">
-                        <div style="margin-bottom: 2rem;">
-                            <label class="form-label">NOMBRE DE LA INSTITUCIÓN</label>
-                            <input type="text" id="institucionNombre" class="form-control" style="max-width: 400px;" placeholder="INSTITUTO NACIONAL DE SALUD">
-                            <button class="btn btn-primary mt-2" onclick="actualizarInstitucion()">ACTUALIZAR NOMBRE</button>
-                        </div>
-                        <div>
-                            <label class="form-label">LOGO DE LA INSTITUCIÓN</label>
-                            <input type="file" id="logoInput" accept="image/*" onchange="previsualizarLogo(this)">
-                            <button class="btn btn-primary mt-2" onclick="actualizarLogo()">ACTUALIZAR LOGO</button>
-                            <div class="logo-preview" id="logoPreview"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Lista de Fichas -->
-                <div id="listaFichasView" class="hidden">
-                    <div class="card">
-                        <div class="card-header">
-                            LISTA DE FICHAS TÉCNICAS
-                        </div>
-                        <div class="card-body">
-                            <div class="search-bar">
-                                <input type="text" id="searchFichaInput" placeholder="Buscar por ID, nombre o código MEF..." onkeyup="filtrarFichas()">
-                                <label class="btn btn-success" style="cursor: pointer;">
-                                    IMPORTAR EXCEL
-                                    <input type="file" id="excelInputFicha" accept=".xlsx, .xls" style="display: none;" onchange="importarFichasExcel(this)">
-                                </label>
-                                <button class="btn btn-warning" onclick="descargarPlantillaFichas()">DESCARGAR PLANTILLA</button>
-                                <button class="btn btn-danger" onclick="reiniciarFichas()">REINICIAR DATOS</button>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover table-fichas" id="fichasTable">
-                                    <thead class="table-dark">
-                                        <tr><th width="5%">ID</th><th width="15%">Código MEF</th><th width="40%">Nombre</th><th width="15%">Clase de Artículo</th><th width="25%">Acciones</th></tr>
-                                    </thead>
-                                    <tbody id="fichasTableBody"></tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- USUARIOS Y ROLES -->
-            <div id="usuarios-section" style="display:none;">
-                <h2 class="mb-4"><i class="fas fa-users me-2 text-primary"></i>Gestión de Usuarios y Roles</h2>
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">Agregar Usuario</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3"><input type="text" class="form-control" id="nuevoUsuario" placeholder="Usuario"></div>
-                            <div class="col-md-3"><input type="password" class="form-control" id="nuevoPassword" placeholder="Contraseña"></div>
-                            <div class="col-md-3"><input type="text" class="form-control" id="nuevoNombre" placeholder="Nombre completo"></div>
-                            <div class="col-md-3">
-                                <select class="form-select" id="nuevoRol">
-                                    <option value="admin">Administrador</option>
-                                    <option value="dec">DEC - Dependencia Encargada</option>
-                                    <option value="au">Área Usuaria / Centro Costo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mt-3"><button class="btn btn-success" onclick="agregarUsuario()"><i class="fas fa-user-plus me-1"></i> Agregar Usuario</button></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">Lista de Usuarios y Permisos</div>
-                    <div class="card-body">
-                        <table class="table table-hover" id="tablaUsuarios">
-                            <thead><tr><th>Usuario</th><th>Nombre</th><th>Rol</th><th>Permisos</th><th>Acciones</th></tr></thead>
-                            <tbody id="tablaUsuariosBody"></tbody>
-                        </tr>
-                    </div>
-                </div>
-            </div>
-            
         </main>
     </div>
 </div>
 
-<footer>
-    <div class="container-fluid text-center text-muted small">
-        <i class="fas fa-copyright me-1"></i> 2025 SGC - Sistema de Gestión de Contrataciones | 
-        Basado en Ley N° 32069 | Prototipo v3 - Con Mantenimiento de Tablas (Corregido)
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-    // ============================================================
-    // FUNCIONES DE UTILIDAD GENERAL
-    // ============================================================
-    function toggleSubmenu() {
-        const submenu = document.getElementById('submenuMantenimiento');
-        if (submenu) {
-            submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
-        }
-    }
-    
-    // ============================================================
-    // DATOS DE EJEMPLO - CENTROS DE COSTO
-    // ============================================================
-    let centrosCosto = [
-        { codigo: "1", nombre: "INSTITUTO NACIONAL DE SALUD", centro: "ALTA DIRECCIÓN" },
-        { codigo: "1.01", nombre: "ORGANOS DE ALTA DIRECCIÓN", centro: "ALTA DIRECCIÓN" },
-        { codigo: "01.01.01", nombre: "ALTA DIRECCION", centro: "ALTA DIRECCIÓN" },
-        { codigo: "01.01.01.01", nombre: "ALTA DIRECCION .", centro: "ALTA DIRECCIÓN" },
-        { codigo: "01.01.01.02", nombre: "UNIDAD DE COMUNICACION E IMAGEN INSTITUCIONAL", centro: "ALTA DIRECCIÓN" },
-        { codigo: "1.02", nombre: "ORGANO DE CONTROL", centro: "OCI" },
-        { codigo: "1.03", nombre: "ADMINISTRACIÓN INTERNA", centro: "OAJ" },
-        { codigo: "01.03.01", nombre: "OFICINA DE PLANEAMIENTO, PRESUPUESTO Y MODERNIZACIÓN", centro: "OPPM" },
-        { codigo: "01.03.01.01", nombre: "OFICINA DE PLANEAMIENTO, PRESUPUESTO Y MODERNIZACION", centro: "OPPM" },
-        { codigo: "01.03.01.02", nombre: "UNIDAD DE PLANEAMIENTO Y ESTADISTICA", centro: "OPPM" }
-    ];
-    
-    // ============================================================
-    // CATÁLOGO SIGAMEF - BIENES
-    // ============================================================
-    let bienes = [];
-    let nextIdBien = 1;
-    
-    // ============================================================
-    // FICHAS TÉCNICAS
-    // ============================================================
-    let fichas = [];
-    let nextIdFicha = 1;
-    let deletedIds = [];
-    let configFichas = {
-        institucionNombre: "INSTITUTO NACIONAL DE SALUD",
-        logoDataURL: null
-    };
-    
-    // ============================================================
-    // USUARIOS
-    // ============================================================
-    let usuarios = [
-        { usuario: "admin", nombre: "Administrador del Sistema", rol: "admin", permisos: "Todos los módulos" },
-        { usuario: "mfernandez", nombre: "María Fernández", rol: "dec", permisos: "Contrataciones, Reportes" },
-        { usuario: "jperez", nombre: "Juan Pérez", rol: "au", permisos: "Requerimientos, Consultas" }
-    ];
-    
-    // ========== FUNCIONES DE NAVEGACIÓN ==========
-    function showSection(section) {
-        // Ocultar todas las secciones
-        const sections = ['dashboard', 'requerimientos', 'contrataciones', 'reportes', 
-                          'centros-costo', 'catalogo-sigamef', 'fichas-tecnicas', 
-                          'usuarios', 'nuevo-requerimiento'];
-        
-        sections.forEach(s => {
-            const el = document.getElementById(s + '-section');
-            if (el) el.style.display = 'none';
-        });
-        
-        // Mostrar la sección seleccionada
-        const targetSection = document.getElementById(section + '-section');
-        if (targetSection) targetSection.style.display = 'block';
-        
-        // Actualizar clase activa en sidebar
-        document.querySelectorAll('.sidebar .nav-link').forEach(link => link.classList.remove('active'));
-        
-        // Marcar activo según la sección
-        if (section === 'dashboard') {
-            document.querySelector('.sidebar .nav-link[onclick*="dashboard"]')?.classList.add('active');
-        } else if (section === 'requerimientos' || section === 'nuevo-requerimiento') {
-            document.querySelector('.sidebar .nav-link[onclick*="requerimientos"]')?.classList.add('active');
-        } else if (section === 'contrataciones') {
-            document.querySelector('.sidebar .nav-link[onclick*="contrataciones"]')?.classList.add('active');
-        } else if (section === 'reportes') {
-            document.querySelector('.sidebar .nav-link[onclick*="reportes"]')?.classList.add('active');
-        } else if (section === 'centros-costo' || section === 'catalogo-sigamef' || section === 'fichas-tecnicas') {
-            document.querySelector('.sidebar .dropdown-toggle')?.classList.add('active');
-        } else if (section === 'usuarios') {
-            document.querySelector('.sidebar .nav-link[onclick*="usuarios"]')?.classList.add('active');
-        }
-        
-        // Refrescar datos según sección
-        if (section === 'centros-costo') cargarTablaCentros();
-        if (section === 'catalogo-sigamef') {
-            mostrarDashboardBienes();
-            cargarBienes();
-        }
-        if (section === 'fichas-tecnicas') {
-            mostrarDashboardFichas();
-            cargarFichas();
-        }
-        if (section === 'dashboard') {
-            actualizarGraficoCentros();
-        }
-    }
-    
-    function irANuevoRequerimiento() {
-        showSection('nuevo-requerimiento');
-        // Limpiar formulario
-        document.getElementById('centroCostoCodigo').value = '';
-        document.getElementById('centroCostoNombre').value = '';
-        document.getElementById('campoCentro').value = '';
-        document.getElementById('plazoDias').value = '';
-        document.getElementById('fechaEstimada').value = '';
-    }
-    
-    function volverARequerimientos() {
-        showSection('requerimientos');
-    }
-    
-    function calcularFecha() {
-        let dias = parseInt(document.getElementById('plazoDias')?.value);
-        if (dias && !isNaN(dias) && dias > 0) {
-            let fecha = new Date();
-            fecha.setDate(fecha.getDate() + dias);
-            let fechaStr = fecha.toISOString().split('T')[0];
-            let fechaEstimada = document.getElementById('fechaEstimada');
-            if (fechaEstimada) fechaEstimada.value = fechaStr;
-        }
-    }
-    
-    function guardarRequerimiento() {
-        let codigo = document.getElementById('centroCostoCodigo')?.value;
-        let nombre = document.getElementById('centroCostoNombre')?.value;
-        let centro = document.getElementById('campoCentro')?.value;
-        let plazo = document.getElementById('plazoDias')?.value;
-        let denominacion = document.getElementById('denominacion')?.value;
-        
-        if (!codigo || !nombre) {
-            Swal.fire('Advertencia', 'Debe seleccionar un Centro de Costo válido', 'warning');
-            return;
-        }
-        
-        if (!denominacion) {
-            Swal.fire('Advertencia', 'Debe ingresar la denominación de la contratación', 'warning');
-            return;
-        }
-        
-        Swal.fire('Éxito', `Requerimiento "${denominacion}" enviado al Área Usuaria\n\nCentro de Costo: ${codigo} - ${nombre}\nCentro: ${centro}\nPlazo: ${plazo} días`, 'success');
-        showSection('requerimientos');
-    }
-    
-    function generarPDFAnexo() {
-        Swal.fire('Simulación', 'PDF del Anexo generado correctamente', 'success');
-    }
-    
-    function verRequerimiento(id) {
-        Swal.fire('Ver Requerimiento', `Mostrando detalles del requerimiento ${id}`, 'info');
-    }
-    
-    function evaluarRequerimiento(id) {
-        Swal.fire('Evaluar Requerimiento', `Evaluando requerimiento ${id}`, 'info');
-    }
-    
-    function subsanarRequerimiento(id) {
-        Swal.fire('Subsanar', `Subsanando observaciones del requerimiento ${id}`, 'info');
-    }
-    
-    function filtrarRequerimientos() {
-        Swal.fire('Filtros aplicados', 'Búsqueda realizada', 'success');
-    }
-    
-    function verContratacion(id) {
-        Swal.fire('Ver Contratación', `Mostrando detalles de la contratación ${id}`, 'info');
-    }
-    
-    function evaluarContratacion(id) {
-        Swal.fire('Evaluar Contratación', `Evaluando contratación ${id}`, 'info');
-    }
-    
-    function filtrarContrataciones(tipo) {
-        Swal.fire('Filtrar', `Mostrando contrataciones: ${tipo}`, 'info');
-        // Actualizar botones activos
-        const btns = document.querySelectorAll('#contrataciones-section .btn-group .btn');
-        btns.forEach(btn => btn.classList.remove('active'));
-        if (event && event.target) event.target.classList.add('active');
-    }
-    
-    function generarReporte() { 
-        Swal.fire('Reporte', 'Reporte generado correctamente', 'success');
-    }
-    
-    function exportarExcel() {
-        Swal.fire('Exportar', 'Exportando a Excel...', 'success');
-    }
-    
-    function exportarPDF() {
-        Swal.fire('Exportar', 'Exportando a PDF...', 'success');
-    }
-    
-    // ========== FUNCIONES CENTROS DE COSTO ==========
-    function reiniciarCentrosCosto() {
-        Swal.fire({
-            title: '¿Reiniciar todos los datos?',
-            text: 'Esto eliminará TODOS los centros de costo y los reemplazará con los datos por defecto.',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#e74c3c',
-            confirmButtonText: 'Sí, reiniciar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                centrosCosto = [
-                    { codigo: "1", nombre: "INSTITUTO NACIONAL DE SALUD", centro: "ALTA DIRECCIÓN" },
-                    { codigo: "1.01", nombre: "ORGANOS DE ALTA DIRECCIÓN", centro: "ALTA DIRECCIÓN" },
-                    { codigo: "01.01.01", nombre: "ALTA DIRECCION", centro: "ALTA DIRECCIÓN" },
-                    { codigo: "01.01.01.01", nombre: "ALTA DIRECCION .", centro: "ALTA DIRECCIÓN" },
-                    { codigo: "01.01.01.02", nombre: "UNIDAD DE COMUNICACION E IMAGEN INSTITUCIONAL", centro: "ALTA DIRECCIÓN" },
-                    { codigo: "1.02", nombre: "ORGANO DE CONTROL", centro: "OCI" },
-                    { codigo: "1.03", nombre: "ADMINISTRACIÓN INTERNA", centro: "OAJ" },
-                    { codigo: "01.03.01", nombre: "OFICINA DE PLANEAMIENTO, PRESUPUESTO Y MODERNIZACIÓN", centro: "OPPM" },
-                    { codigo: "01.03.01.01", nombre: "OFICINA DE PLANEAMIENTO, PRESUPUESTO Y MODERNIZACION", centro: "OPPM" },
-                    { codigo: "01.03.01.02", nombre: "UNIDAD DE PLANEAMIENTO Y ESTADISTICA", centro: "OPPM" }
-                ];
-                cargarTablaCentros();
-                Swal.fire('Reiniciado', 'Los centros de costo han sido restaurados a los valores por defecto', 'success');
-            }
-        });
-    }
-    
-    function cargarTablaCentros() {
-        let tbody = document.getElementById('tablaCentrosBody');
-        if (!tbody) return;
-        tbody.innerHTML = '';
-        centrosCosto.forEach((item, index) => {
-            let row = tbody.insertRow();
-            row.insertCell(0).innerHTML = item.codigo;
-            row.insertCell(1).innerHTML = item.nombre;
-            row.insertCell(2).innerHTML = item.centro;
-            row.insertCell(3).innerHTML = `
-                <div style="display: flex; gap: 8px; justify-content: flex-start;">
-                    <button class="btn-editar" onclick="editarCentroCosto(${index})">Editar</button>
-                    <button class="btn-eliminar" onclick="eliminarCentroCosto(${index})">Eliminar</button>
-                </div>
-            `;
-        });
-        let totalReg = document.getElementById('totalRegistros');
-        if (totalReg) totalReg.innerText = centrosCosto.length;
-        actualizarSelectCentros();
-        actualizarGraficoCentros();
-    }
-    
-    function agregarCentroCosto() {
-        let codigo = document.getElementById('editCodigo').value.trim();
-        let nombre = document.getElementById('editNombre').value.trim();
-        let centro = document.getElementById('editCentro').value.trim();
-        
-        if (!codigo || !nombre || !centro) {
-            Swal.fire('Advertencia', 'Complete todos los campos: Código, Nombre y Centro', 'warning');
-            return;
-        }
-        
-        if (centrosCosto.some(c => c.codigo === codigo)) {
-            Swal.fire('Error', 'Ya existe un centro de costo con ese código', 'error');
-            return;
-        }
-        
-        centrosCosto.push({ codigo: codigo, nombre: nombre, centro: centro });
-        cargarTablaCentros();
-        limpiarFormularioCentro();
-        Swal.fire('Éxito', 'Centro de Costo agregado correctamente', 'success');
-    }
-    
-    let editIndex = null;
-    
-    function editarCentroCosto(index) {
-        let item = centrosCosto[index];
-        document.getElementById('editCodigo').value = item.codigo;
-        document.getElementById('editNombre').value = item.nombre;
-        document.getElementById('editCentro').value = item.centro;
-        editIndex = index;
-        Swal.fire('Editando', 'Modifique los campos y presione "Guardar Cambios"', 'info');
-        
-        let btnAgregar = document.querySelector('#centros-costo-section .btn-success');
-        if (btnAgregar) {
-            btnAgregar.textContent = 'Guardar Cambios';
-            btnAgregar.setAttribute('onclick', 'guardarEdicionCentro()');
-        }
-    }
-    
-    function guardarEdicionCentro() {
-        if (editIndex !== null) {
-            let codigo = document.getElementById('editCodigo').value.trim();
-            let nombre = document.getElementById('editNombre').value.trim();
-            let centro = document.getElementById('editCentro').value.trim();
-            
-            if (codigo && nombre && centro) {
-                centrosCosto[editIndex] = { codigo, nombre, centro };
-                cargarTablaCentros();
-                limpiarFormularioCentro();
-                editIndex = null;
-                
-                let btnAgregar = document.querySelector('#centros-costo-section .btn-success');
-                if (btnAgregar) {
-                    btnAgregar.textContent = 'Agregar';
-                    btnAgregar.setAttribute('onclick', 'agregarCentroCosto()');
-                }
-                Swal.fire('Éxito', 'Centro de Costo actualizado correctamente', 'success');
-            } else {
-                Swal.fire('Error', 'Complete todos los campos', 'error');
-            }
-        }
-    }
-    
-    function eliminarCentroCosto(index) {
-        Swal.fire({
-            title: '¿Está seguro?',
-            text: 'Eliminará este Centro de Costo',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Sí, eliminar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                centrosCosto.splice(index, 1);
-                cargarTablaCentros();
-                Swal.fire('Éxito', 'Centro de Costo eliminado', 'success');
-            }
-        });
-    }
-    
-    function limpiarFormularioCentro() {
-        document.getElementById('editCodigo').value = '';
-        document.getElementById('editNombre').value = '';
-        document.getElementById('editCentro').value = '';
-        editIndex = null;
-        let btnAgregar = document.querySelector('#centros-costo-section .btn-success');
-        if (btnAgregar) {
-            btnAgregar.textContent = 'Agregar';
-            btnAgregar.setAttribute('onclick', 'agregarCentroCosto()');
-        }
-    }
-    
-    function filtrarTablaCentros() {
-        let filtro = document.getElementById('buscarCentroTabla')?.value.toLowerCase() || '';
-        let rows = document.getElementById('tablaCentrosBody')?.rows;
-        if (!rows) return;
-        for (let i = 0; i < rows.length; i++) {
-            let texto = rows[i].cells[0].innerText + rows[i].cells[1].innerText + rows[i].cells[2].innerText;
-            rows[i].style.display = texto.toLowerCase().includes(filtro) ? '' : 'none';
-        }
-    }
-    
-    function descargarPlantillaCentros() {
-        const template = [
-            { codigo: "01.01.01.01", nombre: "ALTA DIRECCION", centro: "ALTA DIRECCIÓN" },
-            { codigo: "01.03.01.01", nombre: "OFICINA DE PLANEAMIENTO", centro: "OPPM" },
-            { codigo: "1.02", nombre: "ORGANO DE CONTROL", centro: "OCI" }
+// ======================================
+// VARIABLES GLOBALES
+// ======================================
+let centrosCostoData = [];
+
+// ======================================
+// INICIALIZACIÓN
+// ======================================
+document.addEventListener('DOMContentLoaded', function() {
+    cargarDatosCentrosCosto();
+});
+
+// ======================================
+// FUNCIONES PARA CENTROS DE COSTO
+// ======================================
+
+function cargarDatosCentrosCosto() {
+    const datosGuardados = localStorage.getItem('centrosCostoData');
+    if (datosGuardados) {
+        centrosCostoData = JSON.parse(datosGuardados);
+    } else {
+        // Datos por defecto
+        centrosCostoData = [
+            { id: 1, codigo: '01.01.01.01', nombre: 'ALTA DIRECCION', centro: 'AD' },
+            { id: 2, codigo: '01.01.01.02', nombre: 'UNIDAD DE PLANEAMIENTO', centro: 'UP' },
+            { id: 3, codigo: '01.01.02.01', nombre: 'UNIDAD DE RECURSOS HUMANOS', centro: 'URH' },
+            { id: 4, codigo: '01.02.01.01', nombre: 'OFICINA DE COOPERACION INTERNACIONAL', centro: 'OCI' },
+            { id: 5, codigo: '01.02.02.01', nombre: 'UNIDAD DE MODERNIZACION', centro: 'OPPM' },
+            { id: 6, codigo: '01.03.01.01', nombre: 'ADMINISTRACIÓN INTERNA', centro: 'AI' },
+            { id: 7, codigo: '01.03.01.02', nombre: 'UNIDAD DE CONTABILIDAD', centro: 'UC' },
+            { id: 8, codigo: '02.01.01.01', nombre: 'AREA DE LABORATORIOS', centro: 'LAB' },
+            { id: 9, codigo: '02.02.01.01', nombre: 'AREA DE INVESTIGACION', centro: 'INV' },
+            { id: 10, codigo: '02.03.01.01', nombre: 'AREA DE CAPACITACION', centro: 'CAP' }
         ];
-        const ws = XLSX.utils.json_to_sheet(template);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Plantilla_Centros_Costo');
-        XLSX.writeFile(wb, 'plantilla_centros_costo.xlsx');
-        Swal.fire('Descargado', 'Plantilla Excel generada correctamente', 'success');
+        guardarDatosCentrosCosto();
     }
+    actualizarTablaCentros();
+}
+
+function guardarDatosCentrosCosto() {
+    localStorage.setItem('centrosCostoData', JSON.stringify(centrosCostoData));
+}
+
+function actualizarTablaCentros() {
+    const tbody = document.getElementById('tablaCentrosBody');
+    tbody.innerHTML = '';
     
-    function importarCentrosExcel(input) {
-        const file = input.files[0];
-        if (!file) return;
-        
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const data = new Uint8Array(e.target.result);
-            const workbook = XLSX.read(data, { type: 'array' });
-            const sheet = workbook.Sheets[workbook.SheetNames[0]];
-            const rows = XLSX.utils.sheet_to_json(sheet);
-            
-            let imported = 0;
-            let skipped = 0;
-            
-            for (const row of rows) {
-                let codigo = row.codigo || row.Codigo || row.CÓDIGO || row.CODIGO || row['Código'] || '';
-                let nombre = row.nombre || row.Nombre || row.DEPENDENCIA || row.Dependencia || row['Nombre/Dependencia'] || row.dependencia || '';
-                let centro = row.centro || row.Centro || row.CENTRO || row['Siglas'] || row.siglas || '';
-                
-                if (!nombre) {
-                    nombre = row['Nombre / Dependencia'] || row['NOMBRE'] || '';
-                }
-                
-                codigo = codigo.toString().trim();
-                nombre = nombre.toString().trim();
-                centro = centro.toString().trim();
-                
-                if (codigo && nombre && centro) {
-                    if (!centrosCosto.some(c => c.codigo === codigo)) {
-                        centrosCosto.push({ codigo: codigo, nombre: nombre, centro: centro });
-                        imported++;
-                    } else {
-                        skipped++;
-                    }
-                }
-            }
-            
-            cargarTablaCentros();
-            
-            let message = '';
-            if (imported > 0) {
-                message = `Se importaron ${imported} centros de costo correctamente.`;
-            } else {
-                message = `No se encontraron registros válidos para importar.\n\nAsegúrese que su archivo Excel tenga columnas con nombres como: "codigo", "nombre", "centro" (o mayúsculas/minúsculas similares).`;
-            }
-            if (skipped > 0) {
-                message += `\n\n${skipped} registros omitidos (códigos duplicados).`;
-            }
-            
-            Swal.fire('Importación completada', message, imported > 0 ? 'success' : 'warning');
-        };
-        reader.onerror = function() {
-            Swal.fire('Error', 'No se pudo leer el archivo', 'error');
-        };
-        reader.readAsArrayBuffer(file);
-        input.value = '';
-    }
-    
-    function exportarCentrosExcel() {
-        if (centrosCosto.length === 0) {
-            Swal.fire('Sin datos', 'No hay centros de costo para exportar', 'warning');
-            return;
-        }
-        const exportData = centrosCosto.map(c => ({
-            'Código': c.codigo,
-            'Nombre / Dependencia': c.nombre,
-            'Centro': c.centro
-        }));
-        const ws = XLSX.utils.json_to_sheet(exportData);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Centros_Costo');
-        XLSX.writeFile(wb, `centros_costo_${new Date().toISOString().split('T')[0]}.xlsx`);
-        Swal.fire('Exportado', 'Archivo Excel generado', 'success');
-    }
-    
-    function actualizarSelectCentros() {
-        let selectFiltro = document.getElementById('filtroCentroCosto');
-        let selectReporte = document.getElementById('reporteCentroCosto');
-        if (selectFiltro) {
-            selectFiltro.innerHTML = '<option value="">Todos los centros</option>';
-            centrosCosto.forEach(cc => {
-                selectFiltro.innerHTML += `<option value="${cc.codigo}">${cc.codigo} - ${cc.nombre}</option>`;
-            });
-        }
-        if (selectReporte) {
-            selectReporte.innerHTML = '<option value="">Todos los centros</option>';
-            centrosCosto.forEach(cc => {
-                selectReporte.innerHTML += `<option value="${cc.codigo}">${cc.codigo} - ${cc.nombre}</option>`;
-            });
-        }
-    }
-    
-    function buscarCentroCosto() {
-        let input = document.getElementById('centroCostoCodigo');
-        if (!input) return;
-        let valor = input.value;
-        let sugerenciasDiv = document.getElementById('sugerenciasCentro');
-        
-        if (valor.length < 2) {
-            sugerenciasDiv.style.display = 'none';
-            return;
-        }
-        
-        let coincidencias = centrosCosto.filter(cc => 
-            cc.codigo.toLowerCase().includes(valor.toLowerCase()) || 
-            cc.nombre.toLowerCase().includes(valor.toLowerCase())
-        );
-        
-        if (coincidencias.length > 0) {
-            sugerenciasDiv.style.display = 'block';
-            sugerenciasDiv.innerHTML = '';
-            coincidencias.forEach(cc => {
-                let div = document.createElement('div');
-                div.className = 'sugerencia-item';
-                div.innerHTML = `<strong>${cc.codigo}</strong> - ${cc.nombre} <span class="text-muted">(${cc.centro})</span>`;
-                div.onclick = () => {
-                    document.getElementById('centroCostoCodigo').value = cc.codigo;
-                    document.getElementById('centroCostoNombre').value = cc.nombre;
-                    document.getElementById('campoCentro').value = cc.centro;
-                    sugerenciasDiv.style.display = 'none';
-                };
-                sugerenciasDiv.appendChild(div);
-            });
-        } else {
-            sugerenciasDiv.style.display = 'none';
-        }
-    }
-    
-    function actualizarGraficoCentros() {
-        let ctx = document.getElementById('centrosChart')?.getContext('2d');
-        if (ctx) {
-            if (window.centrosChartInstance) {
-                window.centrosChartInstance.destroy();
-            }
-            window.centrosChartInstance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: centrosCosto.slice(0, 6).map(c => c.centro + ' (' + c.codigo + ')'),
-                    datasets: [{ 
-                        label: 'Contrataciones', 
-                        data: centrosCosto.slice(0, 6).map(() => Math.floor(Math.random() * 10) + 1), 
-                        backgroundColor: '#2c6e9e' 
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true
-                }
-            });
-        }
-    }
-    
-    // ========== FUNCIONES CATÁLOGO SIGAMEF ==========
-    function cargarBienes() {
-        const saved = localStorage.getItem('sigamef_bienes');
-        if (saved) {
-            bienes = JSON.parse(saved);
-        }
-        const savedNextId = localStorage.getItem('sigamef_next_id');
-        if (savedNextId) {
-            nextIdBien = parseInt(savedNextId);
-        } else if (bienes.length > 0) {
-            nextIdBien = Math.max(...bienes.map(b => parseInt(b.id) || 0)) + 1;
-        }
-        actualizarDashboardBienes();
-        renderizarTablaBienes();
-    }
-    
-    function guardarBienesLS() {
-        localStorage.setItem('sigamef_bienes', JSON.stringify(bienes));
-        localStorage.setItem('sigamef_next_id', nextIdBien);
-        actualizarDashboardBienes();
-        renderizarTablaBienes();
-    }
-    
-    function guardarBien() {
-        const bienId = document.getElementById('bienId').value;
-        const fichaTecnicaValue = document.querySelector('input[name="fichaTecnica"]:checked')?.value;
-        
-        if (!document.getElementById('tipoBien').value || !document.getElementById('codBien').value || !document.getElementById('descripcionBien').value) {
-            Swal.fire('Error', 'Complete los campos obligatorios: Tipo Bien, Código Bien y Descripción', 'error');
-            return;
-        }
-        
-        const bienData = {
-            id: bienId || nextIdBien.toString(),
-            tipoBien: document.getElementById('tipoBien').value,
-            codBien: document.getElementById('codBien').value,
-            descripcion: document.getElementById('descripcionBien').value,
-            um: document.getElementById('um').value,
-            precioUniRef: document.getElementById('precioUniRef').value || '0',
-            idGrupo: document.getElementById('idGrupo').value,
-            grupo: document.getElementById('grupo').value,
-            idClase: document.getElementById('idClase').value,
-            clase: document.getElementById('clase').value,
-            idFamilia: document.getElementById('idFamilia').value,
-            familia: document.getElementById('familia').value,
-            fichaTecnica: fichaTecnicaValue,
-            idFichaTecnica: fichaTecnicaValue === 'Si' ? document.getElementById('idFichaTecnica').value : '',
-            createdAt: new Date().toISOString()
-        };
-        
-        if (bienId) {
-            const index = bienes.findIndex(b => b.id === bienId);
-            if (index !== -1) {
-                bienes[index] = bienData;
-                Swal.fire('Actualizado', `Registro ID ${bienId} actualizado`, 'success');
-            }
-        } else {
-            if (bienes.some(b => b.codBien === bienData.codBien)) {
-                Swal.fire('Error', 'El código de bien ya existe', 'error');
-                return;
-            }
-            bienes.push(bienData);
-            nextIdBien++;
-            Swal.fire('Creado', `Registro ID ${bienData.id} creado`, 'success');
-        }
-        
-        guardarBienesLS();
-        mostrarListaBienes();
-    }
-    
-    function actualizarDashboardBienes() {
-        const total = bienes.length;
-        const conFicha = bienes.filter(b => b.fichaTecnica === 'Si').length;
-        const sinFicha = total - conFicha;
-        const valorTotal = bienes.reduce((sum, b) => sum + (parseFloat(b.precioUniRef) || 0), 0);
-        
-        const totalEl = document.getElementById('totalBienes');
-        const conFichaEl = document.getElementById('totalConFicha');
-        const sinFichaEl = document.getElementById('totalSinFicha');
-        const valorEl = document.getElementById('totalValor');
-        
-        if (totalEl) totalEl.textContent = total;
-        if (conFichaEl) conFichaEl.textContent = conFicha;
-        if (sinFichaEl) sinFichaEl.textContent = sinFicha;
-        if (valorEl) valorEl.textContent = `S/ ${valorTotal.toFixed(2)}`;
-    }
-    
-    function renderizarTablaBienes() {
-        const searchTerm = document.getElementById('searchBienInput')?.value.toLowerCase() || '';
-        const filtered = bienes.filter(b => 
-            b.id?.toString().includes(searchTerm) ||
-            b.codBien?.toLowerCase().includes(searchTerm) ||
-            b.descripcion?.toLowerCase().includes(searchTerm)
-        );
-        
-        const tbody = document.getElementById('bienesTableBody');
-        if (!tbody) return;
-        
-        if (filtered.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="9" style="text-align: center;">No hay registros. Use "Nuevo Registro" para comenzar.</td></tr>';
-            return;
-        }
-        
-        tbody.innerHTML = filtered.map(b => `
-            <tr>
-                <td><span style="font-weight: bold; color: #1a5276;">${b.id || ''}</span></td>
-                <td>${escapeHtml(b.tipoBien || '')}</td>
-                <td>${escapeHtml(b.codBien || '')}</td>
-                <td>${escapeHtml(b.descripcion || '')}</td>
-                <td>${escapeHtml(b.um || '')}</td>
-                <td style="text-align: right;">${b.precioUniRef ? `S/ ${parseFloat(b.precioUniRef).toFixed(2)}` : '-'}</td>
-                <td class="${b.fichaTecnica === 'Si' ? 'ficha-si' : 'ficha-no'}">${b.fichaTecnica === 'Si' ? 'Sí' : 'No'}</td>
-                <td>${b.fichaTecnica === 'Si' ? escapeHtml(b.idFichaTecnica || '') : '-'}</td>
-                <td class="action-buttons">
-                    <button class="btn btn-primary btn-sm" onclick="editarBien('${b.id}')">Editar</button>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarBien('${b.id}')">Eliminar</button>
-                </td>
-             </tr>
-        `).join('');
-    }
-    
-    function filtrarBienes() {
-        renderizarTablaBienes();
-    }
-    
-    function mostrarDashboardBienes() {
-        const dashboard = document.getElementById('dashboardBienesView');
-        const form = document.getElementById('formBienView');
-        const lista = document.getElementById('listaBienesView');
-        if (dashboard) dashboard.classList.remove('hidden');
-        if (form) form.classList.add('hidden');
-        if (lista) lista.classList.add('hidden');
-        actualizarDashboardBienes();
-    }
-    
-    function mostrarFormularioBien() {
-        const dashboard = document.getElementById('dashboardBienesView');
-        const form = document.getElementById('formBienView');
-        const lista = document.getElementById('listaBienesView');
-        if (dashboard) dashboard.classList.add('hidden');
-        if (form) form.classList.remove('hidden');
-        if (lista) lista.classList.add('hidden');
-        document.getElementById('formBienTitle').textContent = 'NUEVO REGISTRO DE BIEN';
-        document.getElementById('bienForm').reset();
-        document.getElementById('bienId').value = '';
-        document.getElementById('idFichaTecnica').disabled = true;
-        const noRadio = document.querySelector('input[name="fichaTecnica"][value="No"]');
-        if (noRadio) noRadio.checked = true;
-        toggleFichaId(false);
-    }
-    
-    function mostrarListaBienes() {
-        const dashboard = document.getElementById('dashboardBienesView');
-        const form = document.getElementById('formBienView');
-        const lista = document.getElementById('listaBienesView');
-        if (dashboard) dashboard.classList.add('hidden');
-        if (form) form.classList.add('hidden');
-        if (lista) lista.classList.remove('hidden');
-        renderizarTablaBienes();
-    }
-    
-    function cancelarFormBien() {
-        mostrarListaBienes();
-    }
-    
-    function toggleFichaId(hasFicha) {
-        const idFichaInput = document.getElementById('idFichaTecnica');
-        if (hasFicha) {
-            idFichaInput.disabled = false;
-            idFichaInput.required = true;
-        } else {
-            idFichaInput.disabled = true;
-            idFichaInput.required = false;
-            idFichaInput.value = '';
-        }
-    }
-    
-    function editarBien(id) {
-        const bien = bienes.find(b => b.id === id);
-        if (!bien) return;
-        
-        mostrarFormularioBien();
-        document.getElementById('formBienTitle').textContent = `EDITAR REGISTRO - ID: ${id}`;
-        document.getElementById('bienId').value = bien.id;
-        document.getElementById('tipoBien').value = bien.tipoBien || '';
-        document.getElementById('codBien').value = bien.codBien || '';
-        document.getElementById('descripcionBien').value = bien.descripcion || '';
-        document.getElementById('um').value = bien.um || '';
-        document.getElementById('precioUniRef').value = bien.precioUniRef || '';
-        document.getElementById('idGrupo').value = bien.idGrupo || '';
-        document.getElementById('grupo').value = bien.grupo || '';
-        document.getElementById('idClase').value = bien.idClase || '';
-        document.getElementById('clase').value = bien.clase || '';
-        document.getElementById('idFamilia').value = bien.idFamilia || '';
-        document.getElementById('familia').value = bien.familia || '';
-        
-        if (bien.fichaTecnica === 'Si') {
-            const siRadio = document.querySelector('input[name="fichaTecnica"][value="Si"]');
-            if (siRadio) siRadio.checked = true;
-            toggleFichaId(true);
-            document.getElementById('idFichaTecnica').value = bien.idFichaTecnica || '';
-        } else {
-            const noRadio = document.querySelector('input[name="fichaTecnica"][value="No"]');
-            if (noRadio) noRadio.checked = true;
-            toggleFichaId(false);
-        }
-    }
-    
-    function eliminarBien(id) {
-        Swal.fire({
-            title: '¿Estás seguro?',
-            text: `El registro ID ${id} será eliminado.`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Sí, eliminar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                bienes = bienes.filter(b => b.id !== id);
-                guardarBienesLS();
-                Swal.fire('Eliminado', `Registro ID ${id} eliminado`, 'success');
-            }
-        });
-    }
-    
-    function reiniciarBienes() {
-        Swal.fire({
-            title: '¿Reiniciar todos los datos?',
-            text: 'Esto eliminará TODOS los bienes del catálogo SIGAMEF',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#e74c3c',
-            confirmButtonText: 'Sí, reiniciar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                bienes = [];
-                nextIdBien = 1;
-                guardarBienesLS();
-                Swal.fire('Reiniciado', 'Todos los datos han sido reiniciados', 'success');
-                mostrarListaBienes();
-            }
-        });
-    }
-    
-    function importarBienesExcel(input) {
-        const file = input.files[0];
-        if (!file) return;
-        
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const data = new Uint8Array(e.target.result);
-            const workbook = XLSX.read(data, { type: 'array' });
-            const sheet = workbook.Sheets[workbook.SheetNames[0]];
-            const rows = XLSX.utils.sheet_to_json(sheet);
-            
-            let imported = 0;
-            let skipped = 0;
-            
-            for (const row of rows) {
-                const codBien = row['Cod. Bien'] || row.codBien || row.CodBien;
-                if (codBien && bienes.some(b => b.codBien === codBien)) {
-                    skipped++;
-                    continue;
-                }
-                
-                const fichaTecnica = row['Ficha Técnica'] || row.fichaTecnica || 'No';
-                const newBien = {
-                    id: nextIdBien.toString(),
-                    tipoBien: row['Tipo Bien'] || row.tipoBien || '',
-                    codBien: codBien || '',
-                    descripcion: row['Descripción'] || row.descripcion || '',
-                    um: row['U.M.'] || row.um || '',
-                    precioUniRef: row['Precio_Uni_Ref (S/.)'] || row.precioUniRef || '0',
-                    idGrupo: row['ID Grupo'] || row.idGrupo || '',
-                    grupo: row.Grupo || row.grupo || '',
-                    idClase: row['ID Clase'] || row.idClase || '',
-                    clase: row.Clase || row.clase || '',
-                    idFamilia: row['ID Familia'] || row.idFamilia || '',
-                    familia: row.Familia || row.familia || '',
-                    fichaTecnica: fichaTecnica,
-                    idFichaTecnica: fichaTecnica === 'Si' ? (row['ID Ficha Técnica'] || row.idFichaTecnica || '') : '',
-                    createdAt: new Date().toISOString()
-                };
-                bienes.push(newBien);
-                nextIdBien++;
-                imported++;
-            }
-            guardarBienesLS();
-            let message = `Se importaron ${imported} registros correctamente`;
-            if (skipped > 0) message += `. ${skipped} registros omitidos (código duplicado)`;
-            Swal.fire('Importado', message, 'success');
-            renderizarTablaBienes();
-        };
-        reader.readAsArrayBuffer(file);
-        input.value = '';
-    }
-    
-    function exportarBienesExcel() {
-        if (bienes.length === 0) {
-            Swal.fire('Sin datos', 'No hay registros para exportar', 'warning');
-            return;
-        }
-        const exportData = bienes.map(b => ({
-            'ID': b.id,
-            'Tipo Bien': b.tipoBien,
-            'Cod. Bien': b.codBien,
-            'Descripción': b.descripcion,
-            'U.M.': b.um,
-            'Precio_Uni_Ref (S/.)': b.precioUniRef,
-            'ID Grupo': b.idGrupo,
-            'Grupo': b.grupo,
-            'ID Clase': b.idClase,
-            'Clase': b.clase,
-            'ID Familia': b.idFamilia,
-            'Familia': b.familia,
-            'Ficha Técnica': b.fichaTecnica,
-            'ID Ficha Técnica': b.idFichaTecnica
-        }));
-        const ws = XLSX.utils.json_to_sheet(exportData);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Catalogo_SIGAMEF');
-        XLSX.writeFile(wb, `catalogo_sigamef_${new Date().toISOString().split('T')[0]}.xlsx`);
-        Swal.fire('Exportado', 'Archivo Excel generado', 'success');
-    }
-    
-    // ========== FUNCIONES FICHAS TÉCNICAS ==========
-    function cargarFichas() {
-        const saved = localStorage.getItem('fichas_tecnicas');
-        if (saved) {
-            fichas = JSON.parse(saved);
-        }
-        const savedNextId = localStorage.getItem('fichas_next_id');
-        if (savedNextId) {
-            nextIdFicha = parseInt(savedNextId);
-        } else if (fichas.length > 0) {
-            nextIdFicha = Math.max(...fichas.map(f => parseInt(f.id) || 0)) + 1;
-        }
-        const savedDeletedIds = localStorage.getItem('fichas_deleted_ids');
-        if (savedDeletedIds) {
-            deletedIds = JSON.parse(savedDeletedIds);
-        }
-        const savedConfig = localStorage.getItem('fichas_config');
-        if (savedConfig) {
-            configFichas = JSON.parse(savedConfig);
-        }
-        
-        const institucionInput = document.getElementById('institucionNombre');
-        if (institucionInput) institucionInput.value = configFichas.institucionNombre;
-        if (configFichas.logoDataURL) {
-            const logoPreview = document.getElementById('logoPreview');
-            if (logoPreview) logoPreview.innerHTML = `<img src="${configFichas.logoDataURL}" alt="Logo" style="max-width: 150px;">`;
-        }
-        
-        actualizarDashboardFichas();
-        renderizarTablaFichas();
-    }
-    
-    function guardarFichasLS() {
-        localStorage.setItem('fichas_tecnicas', JSON.stringify(fichas));
-        localStorage.setItem('fichas_next_id', nextIdFicha);
-        localStorage.setItem('fichas_deleted_ids', JSON.stringify(deletedIds));
-        actualizarDashboardFichas();
-        renderizarTablaFichas();
-    }
-    
-    function guardarFicha() {
-        const fichaId = document.getElementById('fichaId').value;
-        const idValue = document.getElementById('idFicha').value;
-        
-        if (!document.getElementById('codigoMEF').value || !document.getElementById('nombreFicha').value) {
-            Swal.fire('Error', 'Complete los campos obligatorios: Código MEF y Nombre', 'error');
-            return;
-        }
-        
-        if (deletedIds.includes(parseInt(idValue))) {
-            Swal.fire('Error', 'Este ID ya fue eliminado y no puede ser reutilizado', 'error');
-            return;
-        }
-        
-        const fichaData = {
-            id: idValue,
-            codigoMEF: document.getElementById('codigoMEF').value,
-            nombre: document.getElementById('nombreFicha').value,
-            otrasDenominaciones: document.getElementById('otrasDenominaciones').value,
-            claseArticulo: document.getElementById('claseArticulo').value,
-            subClaseArticulo: document.getElementById('subClaseArticulo').value,
-            presentacion: document.getElementById('presentacion').value,
-            pesoMolecular: document.getElementById('pesoMolecular').value,
-            porcentajePureza: document.getElementById('porcentajePureza').value,
-            formula: document.getElementById('formula').value,
-            densidad: document.getElementById('densidad').value,
-            ph: document.getElementById('ph').value,
-            documentos: document.getElementById('documentos').value,
-            temperaturaAlmacenamiento: document.getElementById('temperaturaAlmacenamiento').value,
-            vigencia: document.getElementById('vigencia').value,
-            aplicacion: document.getElementById('aplicacion').value,
-            observacion: document.getElementById('observacion').value,
-            createdAt: new Date().toISOString()
-        };
-        
-        if (fichaId) {
-            const index = fichas.findIndex(f => f.id === fichaId);
-            if (index !== -1) {
-                fichas[index] = fichaData;
-                Swal.fire('Actualizado', `Ficha ID ${fichaId} actualizada`, 'success');
-            }
-        } else {
-            fichas.push(fichaData);
-            Swal.fire('Creado', `Ficha ID ${idValue} creada`, 'success');
-        }
-        
-        guardarFichasLS();
-        mostrarListaFichas();
-    }
-    
-    function guardarConfigFichas() {
-        localStorage.setItem('fichas_config', JSON.stringify(configFichas));
-    }
-    
-    function actualizarDashboardFichas() {
-        const totalEl = document.getElementById('totalFichas');
-        const nextIdEl = document.getElementById('nextIdDisplay');
-        const deletedEl = document.getElementById('deletedIdsCount');
-        if (totalEl) totalEl.textContent = fichas.length;
-        if (nextIdEl) nextIdEl.textContent = nextIdFicha;
-        if (deletedEl) deletedEl.textContent = deletedIds.length;
-    }
-    
-    function renderizarTablaFichas() {
-        const searchTerm = document.getElementById('searchFichaInput')?.value.toLowerCase() || '';
-        const filtered = fichas.filter(f => 
-            f.id?.toString().includes(searchTerm) ||
-            f.nombre?.toLowerCase().includes(searchTerm) ||
-            f.codigoMEF?.toLowerCase().includes(searchTerm)
-        );
-        
-        const tbody = document.getElementById('fichasTableBody');
-        if (!tbody) return;
-        
-        if (filtered.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center;">No hay fichas registradas. Use "Nueva Ficha" para comenzar.</td></tr>';
-            return;
-        }
-        
-        tbody.innerHTML = filtered.map(f => `
-            <tr>
-                <td><span style="font-weight: bold; color: #1a5276;">${f.id || ''}</span></td>
-                <td>${escapeHtml(f.codigoMEF || '')}</td>
-                <td>${escapeHtml(f.nombre || '')}</td>
-                <td>${escapeHtml(f.claseArticulo || '')}</td>
-                <td class="action-buttons">
-                    <button class="btn btn-primary btn-sm" onclick="editarFicha('${f.id}')">Editar</button>
-                    <button class="btn btn-success btn-sm" onclick="generarPDFFicha('${f.id}')">PDF</button>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarFicha('${f.id}')">Eliminar</button>
-                </td>
-             </tr>
-        `).join('');
-    }
-    
-    function filtrarFichas() {
-        renderizarTablaFichas();
-    }
-    
-    function getNextIdFicha() {
-        const newId = nextIdFicha;
-        nextIdFicha++;
-        guardarFichasLS();
-        return newId;
-    }
-    
-    function mostrarDashboardFichas() {
-        const dashboard = document.getElementById('dashboardFichasView');
-        const form = document.getElementById('formFichaView');
-        const lista = document.getElementById('listaFichasView');
-        const config = document.getElementById('configFichasView');
-        if (dashboard) dashboard.classList.remove('hidden');
-        if (form) form.classList.add('hidden');
-        if (lista) lista.classList.add('hidden');
-        if (config) config.classList.add('hidden');
-        actualizarDashboardFichas();
-    }
-    
-    function mostrarFormularioFicha() {
-        const dashboard = document.getElementById('dashboardFichasView');
-        const form = document.getElementById('formFichaView');
-        const lista = document.getElementById('listaFichasView');
-        const config = document.getElementById('configFichasView');
-        if (dashboard) dashboard.classList.add('hidden');
-        if (form) form.classList.remove('hidden');
-        if (lista) lista.classList.add('hidden');
-        if (config) config.classList.add('hidden');
-        document.getElementById('formFichaTitle').textContent = 'FICHA TÉCNICA - NUEVO REGISTRO';
-        document.getElementById('fichaForm').reset();
-        document.getElementById('fichaId').value = '';
-        document.getElementById('idFicha').value = getNextIdFicha();
-        document.getElementById('idFicha').style.background = '#e8f4fd';
-    }
-    
-    function mostrarListaFichas() {
-        const dashboard = document.getElementById('dashboardFichasView');
-        const form = document.getElementById('formFichaView');
-        const lista = document.getElementById('listaFichasView');
-        const config = document.getElementById('configFichasView');
-        if (dashboard) dashboard.classList.add('hidden');
-        if (form) form.classList.add('hidden');
-        if (lista) lista.classList.remove('hidden');
-        if (config) config.classList.add('hidden');
-        renderizarTablaFichas();
-    }
-    
-    function mostrarConfigFichas() {
-        const dashboard = document.getElementById('dashboardFichasView');
-        const form = document.getElementById('formFichaView');
-        const lista = document.getElementById('listaFichasView');
-        const config = document.getElementById('configFichasView');
-        if (dashboard) dashboard.classList.add('hidden');
-        if (form) form.classList.add('hidden');
-        if (lista) lista.classList.add('hidden');
-        if (config) config.classList.remove('hidden');
-    }
-    
-    function cancelarFormFicha() {
-        mostrarListaFichas();
-    }
-    
-    function editarFicha(id) {
-        const ficha = fichas.find(f => f.id === id);
-        if (!ficha) return;
-        
-        mostrarFormularioFicha();
-        document.getElementById('formFichaTitle').textContent = `FICHA TÉCNICA - EDITAR ID: ${id}`;
-        document.getElementById('fichaId').value = ficha.id;
-        document.getElementById('idFicha').value = ficha.id;
-        document.getElementById('idFicha').style.background = '#e0e0e0';
-        document.getElementById('codigoMEF').value = ficha.codigoMEF || '';
-        document.getElementById('nombreFicha').value = ficha.nombre || '';
-        document.getElementById('otrasDenominaciones').value = ficha.otrasDenominaciones || '';
-        document.getElementById('claseArticulo').value = ficha.claseArticulo || '';
-        document.getElementById('subClaseArticulo').value = ficha.subClaseArticulo || '';
-        document.getElementById('presentacion').value = ficha.presentacion || '';
-        document.getElementById('pesoMolecular').value = ficha.pesoMolecular || '';
-        document.getElementById('porcentajePureza').value = ficha.porcentajePureza || '';
-        document.getElementById('formula').value = ficha.formula || '';
-        document.getElementById('densidad').value = ficha.densidad || '';
-        document.getElementById('ph').value = ficha.ph || '';
-        document.getElementById('documentos').value = ficha.documentos || '';
-        document.getElementById('temperaturaAlmacenamiento').value = ficha.temperaturaAlmacenamiento || '';
-        document.getElementById('vigencia').value = ficha.vigencia || '';
-        document.getElementById('aplicacion').value = ficha.aplicacion || '';
-        document.getElementById('observacion').value = ficha.observacion || '';
-    }
-    
-    function eliminarFicha(id) {
-        Swal.fire({
-            title: '¿Estás seguro?',
-            html: `La ficha con ID <strong>${id}</strong> será eliminada.`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Sí, eliminar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fichas = fichas.filter(f => f.id !== id);
-                if (!deletedIds.includes(parseInt(id))) {
-                    deletedIds.push(parseInt(id));
-                    deletedIds.sort((a, b) => a - b);
-                }
-                guardarFichasLS();
-                Swal.fire('Eliminado', `Ficha ID ${id} eliminada`, 'success');
-            }
-        });
-    }
-    
-    async function generarPDFFicha(id) {
-        const ficha = fichas.find(f => f.id === id);
-        if (!ficha) return;
-        
-        Swal.fire({ title: 'Generando PDF...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-        
-        const pdfContent = document.createElement('div');
-        pdfContent.className = 'pdf-content';
-        pdfContent.style.padding = '20px';
-        pdfContent.style.fontFamily = 'Arial, Helvetica, sans-serif';
-        pdfContent.style.fontSize = '10px';
-        
-        const logoHTML = configFichas.logoDataURL ? 
-            `<img src="${configFichas.logoDataURL}" style="max-width: 80px; margin-bottom: 10px;">` : '';
-        
-        pdfContent.innerHTML = `
-            <div style="text-align: center; margin-bottom: 20px;">
-                ${logoHTML}
-                <h1 style="font-size: 14px; margin: 5px 0;">FICHA TECNICA</h1>
-                <h2 style="font-size: 11px; color: #555;">${configFichas.institucionNombre}</h2>
-            </div>
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr><td class="label-cell">Clase de Articulo</td><td>${escapeHtml(ficha.claseArticulo || '')}</td></tr>
-                <tr><td class="label-cell">Sub Clase de Articulo</td><td>${escapeHtml(ficha.subClaseArticulo || '')}</td></tr>
-                <tr><td class="label-cell">ID</td><td>${escapeHtml(ficha.id || '')}</td></tr>
-                <tr><td class="label-cell">Código MEF</td><td>${escapeHtml(ficha.codigoMEF || '')}</td></tr>
-                <tr><td class="label-cell">Nombre</td><td>${escapeHtml(ficha.nombre || '')}</td></tr>
-                <tr><td class="label-cell">Otra(s) Denominación(es)</td><td>${escapeHtml(ficha.otrasDenominaciones || '')}</td></tr>
-                <tr><td class="label-cell">Característica</td><td>${escapeHtml(ficha.aplicacion || '')}</td></tr>
-                <tr><td class="label-cell">Documentos</td><td>${escapeHtml(ficha.documentos || '')}</td></tr>
-                <tr><td class="label-cell">Forma de Presentación</td><td>${escapeHtml(ficha.presentacion || '')}</td></tr>
-                <tr><td class="label-cell">Peso Molecular</td><td>${escapeHtml(ficha.pesoMolecular || '')}</td></tr>
-                <tr><td class="label-cell">Porcentaje Pureza</td><td>${escapeHtml(ficha.porcentajePureza || '')}</td></tr>
-                <tr><td class="label-cell">Fórmula</td><td>${escapeHtml(ficha.formula || '')}</td></tr>
-                <tr><td class="label-cell">Densidad (g/cm³)</td><td>${escapeHtml(ficha.densidad || '')}</td></tr>
-                <tr><td class="label-cell">pH</td><td>${escapeHtml(ficha.ph || '')}</td></tr>
-                <tr><td class="label-cell">Temperatura de Almacenamiento</td><td>${escapeHtml(ficha.temperaturaAlmacenamiento || '')}</td></tr>
-                <tr><td class="label-cell">Vigencia</td><td>${escapeHtml(ficha.vigencia || '')}</td></tr>
-                <tr><td class="label-cell">Observación</td><td>${escapeHtml(ficha.observacion || '')}</td></tr>
-            </table>
+    centrosCostoData.forEach(centro => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${centro.codigo}</td>
+            <td>${centro.nombre}</td>
+            <td>${centro.centro}</td>
+            <td>
+                <button class="btn-editar me-2" onclick="editarCentroCosto(${centro.id})">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
+                <button class="btn-eliminar" onclick="eliminarCentroCosto(${centro.id})">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+            </td>
         `;
-        
-        try {
-            const opt = {
-                margin: [0.5, 0.5, 0.5, 0.5],
-                filename: `ficha_tecnica_ID${ficha.id}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-            };
-            await html2pdf().set(opt).from(pdfContent).save();
-            Swal.fire('Éxito', `PDF de la ficha ID ${ficha.id} generado`, 'success');
-        } catch (error) {
-            Swal.fire('Error', 'Error al generar el PDF', 'error');
-        }
-    }
-    
-    function importarFichasExcel(input) {
-        const file = input.files[0];
-        if (!file) return;
-        
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const data = new Uint8Array(e.target.result);
-            const workbook = XLSX.read(data, { type: 'array' });
-            const sheet = workbook.Sheets[workbook.SheetNames[0]];
-            const rows = XLSX.utils.sheet_to_json(sheet);
-            
-            let imported = 0;
-            for (const row of rows) {
-                const newFicha = {
-                    id: getNextIdFicha().toString(),
-                    codigoMEF: row.codigoMEF || row.CodigoMEF || '',
-                    nombre: row.nombre || row.Nombre || '',
-                    otrasDenominaciones: row.otrasDenominaciones || '',
-                    claseArticulo: row.claseArticulo || 'Reactivo',
-                    subClaseArticulo: row.subClaseArticulo || '',
-                    presentacion: row.presentacion || '',
-                    pesoMolecular: row.pesoMolecular || '',
-                    porcentajePureza: row.porcentajePureza || '',
-                    formula: row.formula || '',
-                    densidad: row.densidad || '',
-                    ph: row.ph || '',
-                    documentos: row.documentos || '',
-                    temperaturaAlmacenamiento: row.temperaturaAlmacenamiento || '',
-                    vigencia: row.vigencia || '',
-                    aplicacion: row.aplicacion || row.Caracteristica || '',
-                    observacion: row.observacion || '',
-                    createdAt: new Date().toISOString()
-                };
-                fichas.push(newFicha);
-                imported++;
-            }
-            guardarFichasLS();
-            Swal.fire('Importado', `Se importaron ${imported} fichas`, 'success');
-            renderizarTablaFichas();
-        };
-        reader.readAsArrayBuffer(file);
-        input.value = '';
-    }
-    
-    function descargarPlantillaFichas() {
-        const template = [{
-            codigoMEF: 'B351000023415',
-            nombre: 'N,N,N,N-TETRAMETIL-ETILENDIAMINO (TEMED)',
-            otrasDenominaciones: '1,2-Bis(dimethylamino)etane, TEMED',
-            claseArticulo: 'Reactivo',
-            subClaseArticulo: '',
-            presentacion: 'Frasco de 25 mL',
-            pesoMolecular: '116.20',
-            porcentajePureza: '99',
-            formula: '(CH3)2NCH2CH2N(CH3)2',
-            densidad: '0.77-0.01',
-            ph: '',
-            documentos: 'Inserto',
-            temperaturaAlmacenamiento: '2 a 8 °C',
-            vigencia: '',
-            aplicacion: 'catálisis de la formación de radicales libres',
-            observacion: ''
-        }];
-        const ws = XLSX.utils.json_to_sheet(template);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Plantilla_Fichas');
-        XLSX.writeFile(wb, 'plantilla_fichas_tecnicas.xlsx');
-        Swal.fire('Descargado', 'Plantilla Excel generada', 'success');
-    }
-    
-    function reiniciarFichas() {
-        Swal.fire({
-            title: '¿Reiniciar todos los datos?',
-            text: 'Esto eliminará TODAS las fichas técnicas',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#e74c3c',
-            confirmButtonText: 'Sí, reiniciar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fichas = [];
-                nextIdFicha = 1;
-                deletedIds = [];
-                guardarFichasLS();
-                Swal.fire('Reiniciado', 'Todos los datos han sido reiniciados', 'success');
-                mostrarListaFichas();
-            }
-        });
-    }
-    
-    function actualizarInstitucion() {
-        const nuevoNombre = document.getElementById('institucionNombre').value;
-        if (nuevoNombre) {
-            configFichas.institucionNombre = nuevoNombre;
-            guardarConfigFichas();
-            Swal.fire('Actualizado', 'Nombre de institución actualizado', 'success');
-        }
-    }
-    
-    function previsualizarLogo(input) {
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('logoPreview').innerHTML = `<img src="${e.target.result}" alt="Logo preview" style="max-width: 150px;">`;
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-    function actualizarLogo() {
-        const fileInput = document.getElementById('logoInput');
-        if (fileInput.files && fileInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                configFichas.logoDataURL = e.target.result;
-                guardarConfigFichas();
-                Swal.fire('Actualizado', 'Logo actualizado correctamente', 'success');
-            };
-            reader.readAsDataURL(fileInput.files[0]);
-        } else {
-            Swal.fire('Error', 'Seleccione un archivo de imagen', 'error');
-        }
-    }
-    
-    // ========== FUNCIONES USUARIOS ==========
-    function cargarTablaUsuarios() {
-        let tbody = document.getElementById('tablaUsuariosBody');
-        if (!tbody) return;
-        tbody.innerHTML = '';
-        usuarios.forEach((user, index) => {
-            let row = tbody.insertRow();
-            row.insertCell(0).innerHTML = user.usuario;
-            row.insertCell(1).innerHTML = user.nombre;
-            row.insertCell(2).innerHTML = user.rol === 'admin' ? 'Administrador' : (user.rol === 'dec' ? 'DEC' : 'Área Usuaria');
-            row.insertCell(3).innerHTML = user.permisos;
-            row.insertCell(4).innerHTML = `<button class="btn btn-sm btn-danger" onclick="eliminarUsuario(${index})"><i class="fas fa-trash"></i> Eliminar</button>`;
-        });
-    }
-    
-    function agregarUsuario() {
-        let usuario = document.getElementById('nuevoUsuario')?.value.trim();
-        let password = document.getElementById('nuevoPassword')?.value.trim();
-        let nombre = document.getElementById('nuevoNombre')?.value.trim();
-        let rol = document.getElementById('nuevoRol')?.value;
-        
-        if (!usuario || !password || !nombre) {
-            Swal.fire('Advertencia', 'Complete todos los campos del usuario', 'warning');
-            return;
-        }
-        
-        if (usuarios.some(u => u.usuario === usuario)) {
-            Swal.fire('Error', 'El nombre de usuario ya existe', 'error');
-            return;
-        }
-        
-        let permisos = rol === 'admin' ? 'Todos los módulos' : (rol === 'dec' ? 'Contrataciones, Reportes' : 'Requerimientos, Consultas');
-        usuarios.push({ usuario, nombre, rol, permisos });
-        cargarTablaUsuarios();
-        
-        document.getElementById('nuevoUsuario').value = '';
-        document.getElementById('nuevoPassword').value = '';
-        document.getElementById('nuevoNombre').value = '';
-        Swal.fire('Éxito', 'Usuario agregado correctamente', 'success');
-    }
-    
-    function eliminarUsuario(index) {
-        Swal.fire({
-            title: '¿Eliminar este usuario?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Sí',
-            cancelButtonText: 'No'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                usuarios.splice(index, 1);
-                cargarTablaUsuarios();
-                Swal.fire('Eliminado', 'Usuario eliminado', 'success');
-            }
-        });
-    }
-    
-    // ========== FUNCIONES DE UTILIDAD ==========
-    function escapeHtml(text) {
-        if (!text) return '';
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
-    
-    // Cerrar sugerencias al hacer clic fuera
-    document.addEventListener('click', function(e) {
-        let sugerencias = document.getElementById('sugerenciasCentro');
-        let input = document.getElementById('centroCostoCodigo');
-        if (sugerencias && input && !input.contains(e.target) && !sugerencias.contains(e.target)) {
-            sugerencias.style.display = 'none';
-        }
+        tbody.appendChild(fila);
     });
     
-    // Inicializar todo al cargar
-    window.onload = function() {
-        cargarTablaCentros();
-        cargarTablaUsuarios();
-        cargarBienes();
-        cargarFichas();
-        
-        let ctxEstados = document.getElementById('estadosChart')?.getContext('2d');
-        if (ctxEstados) {
-            new Chart(ctxEstados, { 
-                type: 'doughnut', 
-                data: { 
-                    labels: ['Vigentes', 'En evaluación', 'Culminados', 'Borrador'], 
-                    datasets: [{ data: [8, 5, 12, 3], backgroundColor: ['#1a4d8c', '#ffc107', '#198754', '#6c757d'] }] 
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true
-                }
-            });
+    document.getElementById('totalRegistros').textContent = centrosCostoData.length;
+}
+
+function agregarCentroCosto() {
+    const codigo = document.getElementById('editCodigo').value.trim();
+    const nombre = document.getElementById('editNombre').value.trim();
+    const centro = document.getElementById('editCentro').value.trim();
+    
+    if (!codigo || !nombre || !centro) {
+        Swal.fire('Error', 'Por favor complete todos los campos', 'error');
+        return;
+    }
+    
+    const existe = centrosCostoData.some(c => c.codigo === codigo);
+    if (existe) {
+        Swal.fire('Error', 'El código ya existe', 'error');
+        return;
+    }
+    
+    centrosCostoData.push({
+        id: centrosCostoData.length > 0 ? Math.max(...centrosCostoData.map(c => c.id)) + 1 : 1,
+        codigo,
+        nombre,
+        centro
+    });
+    
+    guardarDatosCentrosCosto();
+    actualizarTablaCentros();
+    limpiarFormularioCentro();
+    Swal.fire('Éxito', 'Centro de Costo agregado correctamente', 'success');
+}
+
+function editarCentroCosto(id) {
+    const centro = centrosCostoData.find(c => c.id === id);
+    if (centro) {
+        document.getElementById('editCodigo').value = centro.codigo;
+        document.getElementById('editNombre').value = centro.nombre;
+        document.getElementById('editCentro').value = centro.centro;
+        // Aquí podrías actualizar los valores si lo deseas
+    }
+}
+
+function eliminarCentroCosto(id) {
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: 'Esta acción no se puede deshacer',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            centrosCostoData = centrosCostoData.filter(c => c.id !== id);
+            guardarDatosCentrosCosto();
+            actualizarTablaCentros();
+            Swal.fire('Eliminado', 'El registro ha sido eliminado', 'success');
         }
-        
-        actualizarGraficoCentros();
-        showSection('dashboard');
+    });
+}
+
+function limpiarFormularioCentro() {
+    document.getElementById('editCodigo').value = '';
+    document.getElementById('editNombre').value = '';
+    document.getElementById('editCentro').value = '';
+}
+
+function filtrarTablaCentros() {
+    const filtro = document.getElementById('buscarCentroTabla').value.toLowerCase();
+    const tbody = document.getElementById('tablaCentrosBody');
+    const filas = tbody.querySelectorAll('tr');
+    
+    filas.forEach(fila => {
+        const texto = fila.textContent.toLowerCase();
+        fila.style.display = texto.includes(filtro) ? '' : 'none';
+    });
+}
+
+function reiniciarCentrosCosto() {
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: 'Esta acción eliminará TODOS los centros de costo y no se puede deshacer',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, reiniciar',
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#dc3545'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // CORRECIÓN IMPORTANTE: Borrar completamente localStorage
+            localStorage.removeItem('centrosCostoData');
+            centrosCostoData = [];
+            
+            // Recargar los datos por defecto
+            cargarDatosCentrosCosto();
+            
+            Swal.fire('Reiniciado', 'Los datos han sido reiniciados a los valores por defecto', 'success');
+        }
+    });
+}
+
+function exportarCentrosExcel() {
+    const ws_data = [
+        ['Código', 'Nombre / Dependencia', 'Centro'],
+        ...centrosCostoData.map(c => [c.codigo, c.nombre, c.centro])
+    ];
+    
+    const ws = XLSX.utils.aoa_to_sheet(ws_data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Centros de Costo");
+    XLSX.writeFile(wb, "centros_costo.xlsx");
+    Swal.fire('Éxito', 'Archivo exportado correctamente', 'success');
+}
+
+function importarCentrosExcel(input) {
+    const file = input.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const ws = workbook.Sheets[workbook.SheetNames[0]];
+            const rows = XLSX.utils.sheet_to_json(ws, { header: 1 });
+            
+            if (rows.length > 1) {
+                centrosCostoData = [];
+                for (let i = 1; i < rows.length; i++) {
+                    if (rows[i][0] && rows[i][1] && rows[i][2]) {
+                        centrosCostoData.push({
+                            id: i,
+                            codigo: rows[i][0],
+                            nombre: rows[i][1],
+                            centro: rows[i][2]
+                        });
+                    }
+                }
+                guardarDatosCentrosCosto();
+                actualizarTablaCentros();
+                Swal.fire('Éxito', 'Datos importados correctamente', 'success');
+            }
+        } catch (error) {
+            Swal.fire('Error', 'Error al importar el archivo', 'error');
+        }
     };
+    reader.readAsArrayBuffer(file);
+}
+
+function descargarPlantillaCentros() {
+    const ws_data = [
+        ['Código', 'Nombre / Dependencia', 'Centro'],
+        ['01.01.01.01', 'Ejemplo Centro 1', 'EC1']
+    ];
+    
+    const ws = XLSX.utils.aoa_to_sheet(ws_data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Plantilla");
+    XLSX.writeFile(wb, "plantilla_centros_costo.xlsx");
+}
+
+// ======================================
+// FUNCIONES DE NAVEGACIÓN
+// ======================================
+
+function showSection(section) {
+    document.querySelectorAll('[id$="-section"]').forEach(el => {
+        el.style.display = 'none';
+    });
+    
+    const element = document.getElementById(section + '-section');
+    if (element) {
+        element.style.display = 'block';
+    }
+    
+    // Actualizar nav activo
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+}
+
+function toggleSubmenu() {
+    const submenu = document.getElementById('submenuMantenimiento');
+    submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+}
+
+// Funciones placeholder para otras secciones
+function irANuevoRequerimiento() {
+    showSection('nuevo-requerimiento');
+}
+
+function volverARequerimientos() {
+    showSection('requerimientos');
+}
+
+function filtrarRequerimientos() {
+    Swal.fire('Info', 'Función de filtro en desarrollo', 'info');
+}
+
+function filtrarContrataciones(filtro) {
+    Swal.fire('Info', 'Filtro: ' + filtro, 'info');
+}
+
+function generarReporte() {
+    Swal.fire('Info', 'Generador de reportes en desarrollo', 'info');
+}
+
+function exportarExcel() {
+    Swal.fire('Info', 'Exportación a Excel en desarrollo', 'info');
+}
+
+function exportarPDF() {
+    Swal.fire('Info', 'Exportación a PDF en desarrollo', 'info');
+}
+
+function generarPDFAnexo() {
+    Swal.fire('Info', 'Generador de PDF en desarrollo', 'info');
+}
+
+function guardarRequerimiento() {
+    Swal.fire('Éxito', 'Requerimiento guardado', 'success');
+}
+
+function buscarCentroCosto() {
+    // Función de búsqueda de centros de costo
+}
+
 </script>
+
 </body>
 </html>
